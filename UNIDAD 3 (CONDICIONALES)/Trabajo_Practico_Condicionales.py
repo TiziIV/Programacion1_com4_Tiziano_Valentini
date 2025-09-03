@@ -41,7 +41,34 @@ else:
     print("Por favor, ingrese una contraseña de entre 8 y 14 caracteres")
 
 # EJERCICIO 6
+from statistics import mode, median, mean
+import random
 
+print("CALCULO LA MEDIA, LA MODA Y LA MEDIANA Y EL SESGO DE UNA LISTA DE 50 NUMEROS ALEATORIOS:")
+
+numeros_aleatorios = [random.randint(1, 100) for i in range(50)]
+
+#CALCULAR LA MODA, MEDIA Y MEDIANA DE LA LISTA
+
+moda = mode(numeros_aleatorios)
+mediana = median(numeros_aleatorios)
+media = mean(numeros_aleatorios)
+
+#MUESTRO EN PANTALLA LOS RESULTADOS
+
+print(f"LA MODA DE LA LISTA ES {moda}")
+print(f"LA MEDIANA DE LA LISTA ES {mediana}")
+print(f"LA MEDIA DE LA LISTA ES {media}")
+
+#CALCULAR EL SESGO DE LA LISTA (SI ES POSITIVO, NEGATIVO O SIN SESGO)
+if media > mediana and mediana > moda:
+    print("LA LISTA TIENE SESGO POSITIVO")
+elif media < mediana and mediana < moda:
+    print("LA LISTA TIENE SESGO NEGATIVO")
+elif media == mediana and mediana == moda:
+    print("SIN SESGO")
+else:
+    print("NO CUMPLE CON NINGUNO DE LOS CASOS")
 
 
 # EJERCICIO 7
